@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz App</title>
+    <link rel="stylesheet" href="Quizz App.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <!-- SVEI Quizz Logo -->
+    <div class="brand-logo">
+        <div class="logo-icon">
+            <img src="images/quiz logo.jpg" alt="SVEI Quizz Logo">
+        </div>
+        <div class="logo-text">
+            <h1>SVEI <span>Quizz</span></h1>
+            <p>Think Smart. Play More.</p>
+    </div>
+
+    </div>
+
+        <!-- Home Page -->
+        <div id="home-screen">
+            <p class="welcome">Choose a category and test your knowledge.</p>
+
+            <h2>Choose Category</h2>
+            <p class="subtitle">Select your favorite topic</p>
+
+            <div class="category-container">
+
+                <div class="category selected" onclick="chooseCategory('Web Technology',this)">
+                    <div class="category-icon web-icon">
+                        <img src="images/web.jpg" alt="Web Technology">
+                    </div>
+                    <div class="category-info">
+                        <h3>Web Technology</h3>
+                        <p>HTML,CSS & Javascript</p>
+                    </div>
+                    <span class="check">✓</span>
+                </div>
+
+
+                <div class="category selected" onclick="chooseCategory('Networking',this)">
+                    <div class="category-icon network-icon">
+                        <img src="images/networking.jpg" alt="Networking">
+                    </div>
+                    <div class="category-info">
+                        <h3>Networking</h3>
+                        <p>Computer Networks</p>
+                    </div>
+                    <span class="check">✓</span>
+                </div>
+
+                <div class="category selected" onclick="chooseCategory('Programming',this)">
+                    <div class="category-icon programming-icon">
+                        <img src="images/programming.jpg" alt="Programming">
+                    </div>
+                    <div class="category-info">
+                        <h3>Programming</h3>
+                        <p>Tech & Coding</p>
+                    </div>
+                    <span class="check">✓</span>
+                </div>
+
+                <div class="category selected" onclick="chooseCategory('Geography',this)">
+                    <div class="category-icon geography-icon">
+                        <img src="images/geography.jpg" alt="Geography">
+                    </div>
+                    <div class="category-info">
+                        <h3>Geography</h3>
+                        <p>World Knowledge</p>
+                    </div>
+                    <span class="check">✓</span>
+                </div>
+            </div>
+
+            <h2 class="number-title">Number of Questions</h2>
+
+            <div class="number-container">
+                <button class="number-btn" onclick="chooseNumber(5, this)">5</button>
+                <button class="number-btn selected-number" onclick="chooseNumber(10, this)">10</button>
+                <button class="number-btn" onclick="chooseNumber(15, this)">15</button>
+                <button class="number-btn" onclick="chooseNumber(20, this)">20</button>
+                <button class="number-btn" onclick="chooseNumber(25, this)">25</button>
+            </div>
+
+            <button class="btn start-btn" onclick="startQuiz()">Start Quiz →</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="hidden">
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+
+            <div class="timer">
+                <span class="timer-icon">◷</span>
+                <span id="timer">00:10</span>
+            </div>
+
+            <div class="quiz-header">
+                <span id="question-num">Question 1 of 5</span>
+                <span id="current-category"></span>
+            </div>
+
+            <h2 id="question-text"></h2>
+
+            <div id="options-container" class="options-container"></div>
+
+            <button id="next-btn" class="btn next-btn" disabled>
+                Next Question →
+            </button>
+        </div>
+    <!-- Result Screen -->
+        <div id="result-screen" class="hidden">
+            <div class="result-card">
+                <div class="result-icon">🏆</div>
+                <h2>Quiz Completed!</h2>
+
+                <p class="score-text">
+                    You scored <span id="score">0</span>
+                    out of <span id="total-questions">0</span>
+                </p>
+
+                <p id="feedback">Good job!</p>
+
+                <button class="btn start-btn" onclick="goHome()">
+                    Back to Home
+                </button>
+            </div>
+        </div>
+
+        <br>
+        <p align="middle">Developed By <b>Team Debugger</b></p>
+
+    </div>
+
+<script src="Quizz App.js"></script>
+</body>
+</html>
